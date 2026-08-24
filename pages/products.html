@@ -3,26 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore Fesolux Paints products.">
+  <meta name="description" content="Fesolux Paints product categories.">
   <title>Products | Fesolux Paints</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-  <header class="site-header" id="site-header">
-    <a class="site-header__brand" href="../index.html" aria-label="Fesolux Paints home">
-      <img class="site-header__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo">
-    </a>
-    <nav class="site-header__navigation" aria-label="Primary navigation">
-      <a class="site-header__link" href="products.html">Products</a>
-      <a class="site-header__link" href="colours.html">Colours</a>
-      <a class="site-header__link" href="projects.html">Projects</a>
-      <a class="site-header__link" href="about.html">About</a>
-      <a class="site-header__link" href="contact.html">Contact</a>
+  <header class="site-header">
+    <a class="site-header__brand" href="../index.html" aria-label="Fesolux Paints home"><img class="site-header__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo"></a>
+    <button class="site-header__menu" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">☰</button>
+    <nav class="site-header__navigation" id="primary-navigation" aria-label="Primary navigation">
+      <a class="site-header__link" href="../index.html">Home</a><a class="site-header__link" href="about.html">About Us</a><a class="site-header__link" href="products.html" aria-current="page">Products</a><a class="site-header__link" href="colours.html">Colours</a><a class="site-header__link" href="projects.html">Projects</a><a class="site-header__link" href="contact.html">Contact</a><a class="site-header__cta" href="contact.html">Get in Touch</a>
     </nav>
   </header>
-  <main id="main-content"></main>
-  <footer class="site-footer"><p class="site-footer__text">&copy; <span id="current-year"></span> Fesolux Paints</p></footer>
+  <main id="main-content">
+    <section class="page-hero"><div class="page-hero__inner"><h1 class="page-hero__title">Our Products</h1><div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span>Products</span></div></div></section>
+    <section class="section"><div class="section__inner"><div class="section__header"><p class="section__eyebrow">Product categories</p><h2 class="section__title">A clear home for the Fesolux range</h2><p class="section__copy">Verified product names, descriptions and photography can be added here without changing the presentation system.</p></div><div class="product-grid">
+      <article class="product-card"><div class="product-card__media"><div class="product-card__visual" aria-hidden="true"></div></div><div class="product-card__body"><h3 class="product-card__title">Emulsion Paints</h3><p class="product-card__text">Interior and exterior paint category.</p></div></article>
+      <article class="product-card"><div class="product-card__media"><div class="product-card__visual" aria-hidden="true"></div></div><div class="product-card__body"><h3 class="product-card__title">Gloss Paints</h3><p class="product-card__text">Gloss-finish paint category.</p></div></article>
+      <article class="product-card"><div class="product-card__media"><div class="product-card__visual" aria-hidden="true"></div></div><div class="product-card__body"><h3 class="product-card__title">Matt Paints</h3><p class="product-card__text">Matt-finish paint category.</p></div></article>
+      <article class="product-card"><div class="product-card__media"><div class="product-card__visual" aria-hidden="true"></div></div><div class="product-card__body"><h3 class="product-card__title">Primers &amp; Sealers</h3><p class="product-card__text">Preparation and surface-protection category.</p></div></article>
+    </div></div></section>
+  </main>
+  <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__grid"><div><img class="site-footer__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo"><p class="site-footer__text">Product content will be populated from verified Fesolux information and supplied assets.</p></div><div><h2 class="site-footer__title">Quick Links</h2><div class="site-footer__links"><a class="site-footer__link" href="../index.html">Home</a><a class="site-footer__link" href="about.html">About Us</a><a class="site-footer__link" href="contact.html">Contact</a></div></div><div><h2 class="site-footer__title">Explore</h2><div class="site-footer__links"><a class="site-footer__link" href="products.html">Products</a><a class="site-footer__link" href="colours.html">Colours</a><a class="site-footer__link" href="projects.html">Projects</a></div></div><div><h2 class="site-footer__title">Contact</h2><p class="site-footer__text">Verified contact details will be added when supplied.</p></div></div><div class="site-footer__bottom">&copy; <span id="current-year"></span> Fesolux Paints. All rights reserved.</div></div></footer>
   <script src="../js/main.js" defer></script>
 </body>
 </html>
