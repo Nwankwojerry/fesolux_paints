@@ -3,34 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Professional paint manufacturing and business website.">
-  <title>Fesolux Paints</title>
+  <meta name="description" content="Fesolux Paints — professional paint products and colour solutions.">
+  <title>Fesolux Paints | Premium Paints</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <header class="site-header" id="site-header">
+  <header class="site-header">
     <a class="site-header__brand" href="index.html" aria-label="Fesolux Paints home">
       <img class="site-header__logo" src="images/logo/logo.png" alt="Fesolux Paints logo">
     </a>
-
-    <nav class="site-header__navigation" aria-label="Primary navigation">
+    <button class="site-header__menu" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">☰</button>
+    <nav class="site-header__navigation" id="primary-navigation" aria-label="Primary navigation">
+      <a class="site-header__link" href="index.html" aria-current="page">Home</a>
+      <a class="site-header__link" href="pages/about.html">About Us</a>
       <a class="site-header__link" href="pages/products.html">Products</a>
       <a class="site-header__link" href="pages/colours.html">Colours</a>
       <a class="site-header__link" href="pages/projects.html">Projects</a>
-      <a class="site-header__link" href="pages/about.html">About</a>
       <a class="site-header__link" href="pages/contact.html">Contact</a>
+      <a class="site-header__cta" href="pages/contact.html">Get in Touch</a>
     </nav>
   </header>
 
   <main id="main-content">
-    <!-- Homepage content will be added in a later phase. -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__inner">
+        <div>
+          <p class="hero__eyebrow">Colour your world</p>
+          <h1 class="hero__title" id="hero-title">Brighten your world with <strong>Fesolux</strong> Paints</h1>
+          <p class="hero__copy">A clean, confident paint-brand experience built around the Fesolux blue, white and yellow identity.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="pages/products.html">Explore Products</a>
+            <a class="button button--outline" href="pages/contact.html">Talk to Fesolux</a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-label="Fesolux product visual area">
+          <div class="hero__visual-card">
+            <div class="hero__asset-note"><strong>Fesolux Paints</strong>Place the supplied product photography in <code>images/products/</code> and it can be used here without changing the layout.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" aria-labelledby="benefits-title">
+      <div class="section__inner">
+        <div class="section__header">
+          <p class="section__eyebrow">Why Fesolux</p>
+          <h2 class="section__title" id="benefits-title">A stronger visual foundation for the brand</h2>
+          <p class="section__copy">The interface now follows the supplied reference language: bold blue surfaces, crisp white content areas and focused yellow accents.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-card__icon">✦</div><h3 class="feature-card__title">Premium presentation</h3><p class="feature-card__text">Clear hierarchy and spacious layouts give the brand a confident corporate feel.</p></article>
+          <article class="feature-card"><div class="feature-card__icon">◈</div><h3 class="feature-card__title">Colour-led identity</h3><p class="feature-card__text">Royal blue and yellow accents keep the interface visually connected to Fesolux.</p></article>
+          <article class="feature-card"><div class="feature-card__icon">✓</div><h3 class="feature-card__title">Responsive by design</h3><p class="feature-card__text">Layouts adapt cleanly across desktop, tablet and mobile screens.</p></article>
+          <article class="feature-card"><div class="feature-card__icon">▣</div><h3 class="feature-card__title">Built to grow</h3><p class="feature-card__text">Product imagery and real business content can be added without rebuilding the UI.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="products-title">
+      <div class="section__inner">
+        <div class="section__header">
+          <p class="section__eyebrow">Our products</p>
+          <h2 class="section__title" id="products-title">Paint categories</h2>
+          <p class="section__copy">Use this structured product presentation for verified Fesolux product information and photography.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card"><div class="product-card__media"><div class="product-card__visual" aria-hidden="true"></div></div><div class="product-card__body"><h3 class="product-card__title">Emulsion Paints</h3><p class="product-card__text">Interior and exterior paint category.</p><a class="product-card__link" href="pages/products.html">View category →</a></div></article>
+          <article class="product-card"><div class="product-card__media"><div class="product-card__visual" aria-hidden="true"></div></div><div class="product-card__body"><h3 class="product-card__title">Gloss Paints</h3><p class="product-card__text">Gloss-finish paint category.</p><a class="product-card__link" href="pages/products.html">View category →</a></div></article>
+          <article class="product-card"><div class="product-card__media"><div class="product-card__visual" aria-hidden="true"></div></div><div class="product-card__body"><h3 class="product-card__title">Matt Paints</h3><p class="product-card__text">Matt-finish paint category.</p><a class="product-card__link" href="pages/products.html">View category →</a></div></article>
+          <article class="product-card"><div class="product-card__media"><div class="product-card__visual" aria-hidden="true"></div></div><div class="product-card__body"><h3 class="product-card__title">Primers &amp; Sealers</h3><p class="product-card__text">Preparation and surface-protection category.</p><a class="product-card__link" href="pages/products.html">View category →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--blue" aria-labelledby="confidence-title">
+      <div class="section__inner stats">
+        <div class="stats__intro"><h2 id="confidence-title">Designed to make Fesolux feel unmistakable.</h2><p>The visual system is ready for verified company, product and project information.</p></div>
+        <div class="stat"><span class="stat__number">01</span><span class="stat__label">Brand system</span></div>
+        <div class="stat"><span class="stat__number">04</span><span class="stat__label">Core categories</span></div>
+        <div class="stat"><span class="stat__number">100%</span><span class="stat__label">Responsive UI</span></div>
+        <div class="stat"><span class="stat__number">∞</span><span class="stat__label">Room to grow</span></div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p class="site-footer__text">&copy; <span id="current-year"></span> Fesolux Paints</p>
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div><img class="site-footer__logo" src="images/logo/logo.png" alt="Fesolux Paints logo"><p class="site-footer__text">A modern digital home for the Fesolux Paints brand. Verified business information and real product assets can be added as they become available.</p></div>
+        <div><h2 class="site-footer__title">Quick Links</h2><div class="site-footer__links"><a class="site-footer__link" href="index.html">Home</a><a class="site-footer__link" href="pages/about.html">About Us</a><a class="site-footer__link" href="pages/products.html">Products</a><a class="site-footer__link" href="pages/projects.html">Projects</a></div></div>
+        <div><h2 class="site-footer__title">Explore</h2><div class="site-footer__links"><a class="site-footer__link" href="pages/colours.html">Colours</a><a class="site-footer__link" href="pages/contact.html">Contact</a></div></div>
+        <div><h2 class="site-footer__title">Contact</h2><p class="site-footer__text">Contact details will be added once the verified business information is supplied.</p></div>
+      </div>
+      <div class="site-footer__bottom">&copy; <span id="current-year"></span> Fesolux Paints. All rights reserved.</div>
+    </div>
   </footer>
-
   <script src="js/main.js" defer></script>
 </body>
 </html>
