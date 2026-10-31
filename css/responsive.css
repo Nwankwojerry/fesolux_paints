@@ -14,6 +14,7 @@
   .hero__visual-card { min-height: 280px; }
   .section { padding-block: 4rem; }
   .feature-grid, .product-grid { grid-template-columns: 1fr; }
+  .catalogue-intro { align-items: flex-start; flex-direction: column; gap: .75rem; }
   .content-grid { grid-template-columns: 1fr; }
   .page-hero { margin-top: -70px; padding: 8rem 1rem 3rem; }
   .site-footer__grid { grid-template-columns: 1fr; gap: 2rem; }
