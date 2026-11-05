@@ -15,25 +15,39 @@
   .hero__visual-card { min-height: 280px; }
   .section { padding-block: 4rem; }
   .feature-grid, .product-grid { grid-template-columns: 1fr; }
-  .catalogue-intro { align-items: flex-start; flex-direction: column; gap: .75rem; }
-  .catalogue-category__products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
-  .catalogue-product-card { padding: .65rem; }
-  .catalogue-product-card__media { min-height: 0; aspect-ratio: 1 / 1; padding: .45rem; }
-  .catalogue-product-card__body { padding: .9rem .15rem .2rem; }
-  .catalogue-product-card__category { font-size: .64rem; letter-spacing: .07em; }
-  .catalogue-product-card__title { font-size: clamp(1rem, 3vw, 1.4rem); overflow-wrap: anywhere; }
-  .catalogue-product-card__recommendation { font-size: .76rem; }
-  .catalogue-product-card__recommendation span { font-size: .7rem; }
+  .catalogue-intro { align-items: flex-start; flex-direction: column; gap: .65rem; }
+  /* On mobile the category controls move above the product grid, rather than
+     occupying a narrow left rail. The same controls are reused, not duplicated. */
+  .catalogue-layout { grid-template-columns: minmax(0, 1fr); gap: .85rem; }
+  .catalogue-sidebar { position: static; min-width: 0; padding: 0; border: 0; border-radius: 0; background: transparent; }
+  .catalogue-sidebar__title { margin: 0 0 .45rem; font-size: .78rem; }
+  .catalogue-category-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; }
+  .catalogue-category-nav__link { min-width: 0; min-height: 42px; justify-content: center; padding: .45rem .4rem; border: 1px solid var(--color-border); border-radius: 7px; font-size: .72rem; line-height: 1.25; text-align: center; white-space: normal; overflow-wrap: break-word; }
+  .catalogue-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+  .catalogue-product-card { padding: .55rem; border-radius: 10px; }
+  .catalogue-product-card__media { aspect-ratio: 1 / 1; padding: .35rem; }
+  .catalogue-product-card__body { padding: .7rem .05rem .05rem; }
+  .catalogue-product-card__category { font-size: .58rem; letter-spacing: .045em; }
+  .catalogue-product-card__title { font-size: clamp(.84rem, 3vw, 1.05rem); }
+  .catalogue-product-card__description { font-size: .72rem; line-height: 1.4; }
+  .catalogue-product-card__recommendation { margin-top: .55rem; padding-top: .5rem; font-size: .68rem; line-height: 1.4; }
+  .catalogue-product-card__recommendation span { font-size: .64rem; }
   .catalogue-product-card__details:not(.is-expanded) .catalogue-product-card__description,
-  .catalogue-product-card__details:not(.is-expanded) .catalogue-product-card__recommendation { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
-  .catalogue-product-card__read-more { font-size: .76rem; }
-  .catalogue-product-card__price { font-size: clamp(.9rem, 3vw, 1.2rem); overflow-wrap: anywhere; }
-  .catalogue-product-card__package-size { font-size: .8rem; }
-  .catalogue-product-card__action { min-height: 44px; gap: .35rem; padding-inline: .4rem; font-size: .84rem; }
-  .catalogue-product-card__action svg { width: 17px; height: 17px; }
+  .catalogue-product-card__details:not(.is-expanded) .catalogue-product-card__recommendation { -webkit-line-clamp: 2; }
+  .catalogue-product-card__read-more { margin-top: .35rem; font-size: .69rem; }
+  .catalogue-product-card__price { margin-top: .6rem; font-size: clamp(.84rem, 3vw, 1.08rem); }
+  .catalogue-product-card__package-size { margin: .15rem 0 .6rem; font-size: .7rem; }
+  .catalogue-product-card__action { min-height: 40px; gap: .25rem; padding: .4rem .25rem; font-size: .68rem; }
+  .catalogue-product-card__action svg { width: 15px; height: 15px; }
   .content-grid { grid-template-columns: 1fr; }
   .page-hero { margin-top: -70px; padding: 8rem 1rem 3rem; }
   .site-footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (min-width: 769px) and (max-width: 1000px) {
+  .catalogue-layout { grid-template-columns: 150px minmax(0, 1fr); gap: 1rem; }
+  .catalogue-sidebar { padding: .8rem; }
+  .catalogue-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; }
 }
 
 @media (max-width: 480px) {
@@ -43,16 +57,32 @@
   .stats { grid-template-columns: 1fr 1fr; gap: 1.4rem .5rem; }
   .stat__number { font-size: 1.8rem; }
   .info-panel { padding: 1.25rem; }
-  .catalogue-category { padding: 1.1rem; }
-  .catalogue-category__products { gap: .5rem; }
-  .catalogue-product-card { padding: .4rem; }
-  .catalogue-product-card__media { min-height: 0; padding: .35rem; }
-  .catalogue-product-card__body { padding: .65rem .1rem .15rem; }
+  .catalogue-section { padding-inline: .65rem; }
+  .catalogue-layout { grid-template-columns: 82px minmax(0, 1fr); gap: .55rem; }
+  .catalogue-product-grid { gap: .5rem; }
+  .catalogue-product-card { padding: .45rem; }
+  .catalogue-product-card__media { padding: .25rem; }
+  .catalogue-product-card__body { padding: .6rem .02rem .05rem; }
 }
 
 @media (max-width: 360px) {
-  .catalogue-category__products { grid-template-columns: minmax(0, 1fr); }
-  .catalogue-product-card { width: min(100%, 420px); }
-  .catalogue-product-card__details:not(.is-expanded) .catalogue-product-card__description,
-  .catalogue-product-card__details:not(.is-expanded) .catalogue-product-card__recommendation { -webkit-line-clamp: 2; }
+  .catalogue-section { padding-inline: .45rem; }
+  .catalogue-layout { grid-template-columns: 76px minmax(0, 1fr); gap: .45rem; }
+  .catalogue-sidebar { padding: .55rem .3rem; }
+  .catalogue-sidebar__title { font-size: .65rem; }
+  .catalogue-category-nav__link { min-height: 35px; padding: .34rem .28rem; font-size: .59rem; }
+  .catalogue-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; }
+  .catalogue-product-card { padding: .35rem; }
+  .catalogue-product-card__media { padding: .2rem; }
+  .catalogue-product-card__body { padding: .5rem 0 0; }
+  .catalogue-product-card__category { font-size: .53rem; }
+  .catalogue-product-card__title { font-size: .78rem; }
+  .catalogue-product-card__description { font-size: .64rem; }
+  .catalogue-product-card__recommendation { font-size: .62rem; }
+  .catalogue-product-card__recommendation span { font-size: .58rem; }
+  .catalogue-product-card__read-more { font-size: .64rem; }
+  .catalogue-product-card__price { font-size: .8rem; }
+  .catalogue-product-card__package-size { font-size: .63rem; }
+  .catalogue-product-card__action { min-height: 36px; font-size: .61rem; }
+  .catalogue-product-card__action svg { width: 13px; height: 13px; }
 }
