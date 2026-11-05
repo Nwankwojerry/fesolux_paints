@@ -16,11 +16,13 @@
   .section { padding-block: 4rem; }
   .feature-grid, .product-grid { grid-template-columns: 1fr; }
   .catalogue-intro { align-items: flex-start; flex-direction: column; gap: .65rem; }
-  .catalogue-layout { grid-template-columns: 88px minmax(0, 1fr); gap: .65rem; align-items: start; }
-  .catalogue-sidebar { position: static; padding: .65rem .4rem; }
-  .catalogue-sidebar__title { margin-bottom: .55rem; font-size: .72rem; }
-  .catalogue-category-nav { gap: .25rem; }
-  .catalogue-category-nav__link { min-height: 38px; padding: .4rem .35rem; border-radius: 6px; font-size: .66rem; line-height: 1.25; }
+  /* On mobile the category controls move above the product grid, rather than
+     occupying a narrow left rail. The same controls are reused, not duplicated. */
+  .catalogue-layout { grid-template-columns: minmax(0, 1fr); gap: .85rem; }
+  .catalogue-sidebar { position: static; min-width: 0; padding: 0; border: 0; border-radius: 0; background: transparent; }
+  .catalogue-sidebar__title { margin: 0 0 .45rem; font-size: .78rem; }
+  .catalogue-category-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; }
+  .catalogue-category-nav__link { min-width: 0; min-height: 42px; justify-content: center; padding: .45rem .4rem; border: 1px solid var(--color-border); border-radius: 7px; font-size: .72rem; line-height: 1.25; text-align: center; white-space: normal; overflow-wrap: break-word; }
   .catalogue-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
   .catalogue-product-card { padding: .55rem; border-radius: 10px; }
   .catalogue-product-card__media { aspect-ratio: 1 / 1; padding: .35rem; }
