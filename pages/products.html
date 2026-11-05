@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore the Fesolux Paints product catalogue. Verified product details will be added as they become available.">
+  <meta name="description" content="Explore our Fesolux Paints product range, including Emulsion.">
   <title>Products | Fesolux Paints</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
@@ -28,7 +28,7 @@
       <div class="page-hero__inner">
         <p class="catalogue-hero__eyebrow">The Fesolux collection</p>
         <h1 class="page-hero__title">Our Products</h1>
-        <p class="catalogue-hero__copy">Explore our paint ranges. Product details will be added as verified information becomes available.</p>
+        <p class="catalogue-hero__copy">Explore our range of paint products.</p>
         <div class="breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page">Products</span></div>
       </div>
     </section>
@@ -38,9 +38,9 @@
         <div class="catalogue-intro">
           <div>
             <p class="section__eyebrow">Browse the range</p>
-            <h2 class="section__title" id="catalogue-title">Paint for every project</h2>
+            <h2 class="section__title" id="catalogue-title">Products by category</h2>
           </div>
-          <p class="catalogue-intro__copy">Use the categories to explore the Fesolux range. Approved product names, photographs, descriptions and prices will appear here once they are confirmed.</p>
+          <p class="catalogue-intro__copy">Browse our paint categories.</p>
         </div>
 
         <nav class="catalogue-category-nav" aria-label="Product categories">
@@ -48,16 +48,8 @@
           <a class="catalogue-category-nav__link" href="#gloss-paints">Gloss Paints</a>
           <a class="catalogue-category-nav__link" href="#matt-paints">Matt Paints</a>
           <a class="catalogue-category-nav__link" href="#primers-sealers">Primers &amp; Sealers</a>
+          <a class="catalogue-category-nav__link" href="#screedings">Screedings</a>
         </nav>
-
-        <div class="catalogue-empty-state" role="status">
-          <span class="catalogue-empty-state__mark" aria-hidden="true"></span>
-          <div>
-            <p class="catalogue-empty-state__eyebrow">Catalogue in preparation</p>
-            <h2 class="catalogue-empty-state__title">Product details coming soon</h2>
-            <p class="catalogue-empty-state__copy">We are preparing the approved product information and photographs. No products or prices are listed until those details have been verified.</p>
-          </div>
-        </div>
 
         <div class="catalogue-category-list">
           <section class="catalogue-category" id="emulsion-paints" aria-labelledby="emulsion-paints-title">
@@ -65,15 +57,34 @@
               <span class="catalogue-category__index" aria-hidden="true">01</span>
               <h3 class="catalogue-category__title" id="emulsion-paints-title">Emulsion Paints</h3>
             </div>
-            <p class="catalogue-category__status" data-category-empty>Verified product details will be listed here when available.</p>
-            <div class="catalogue-category__products" data-product-list="emulsion-paints"></div>
+            <div class="catalogue-category__products" data-product-list="emulsion-paints">
+              <article class="catalogue-product-card" data-product-id="acrylic-emulsion" data-package-size="20-litres">
+                <figure class="catalogue-product-card__media">
+                  <img class="catalogue-product-card__image" src="../images/products/fesolux-acrylic-emulsion-20l.png" alt="Fesolux Acrylic Emulsion in a 20-litre bucket" width="768" height="960" fetchpriority="high">
+                </figure>
+                <div class="catalogue-product-card__body">
+                  <p class="catalogue-product-card__category">Emulsion Paints</p>
+                  <h4 class="catalogue-product-card__title">Emulsion</h4>
+                  <div class="catalogue-product-card__details" id="emulsion-details">
+                    <p class="catalogue-product-card__description">A versatile wall paint suitable for all kinds of walls.</p>
+                    <p class="catalogue-product-card__recommendation"><span>Recommended for</span>Customers looking for a wall paint suitable for different wall types.</p>
+                  </div>
+                  <button class="catalogue-product-card__read-more" type="button" aria-expanded="false" aria-controls="emulsion-details" hidden>Read more</button>
+                  <p class="catalogue-product-card__price" aria-label="Price: 14,990 naira"><data value="14990">₦14,990</data></p>
+                  <p class="catalogue-product-card__package-size">20 Litres</p>
+                  <a class="catalogue-product-card__action" href="contact.html" aria-label="Contact Fesolux about Emulsion">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L22 8H6M10 21h.01M18 21h.01"/></svg>
+                    <span>Contact Fesolux</span>
+                  </a>
+                </div>
+              </article>
+            </div>
           </section>
           <section class="catalogue-category" id="gloss-paints" aria-labelledby="gloss-paints-title">
             <div class="catalogue-category__heading">
               <span class="catalogue-category__index" aria-hidden="true">02</span>
               <h3 class="catalogue-category__title" id="gloss-paints-title">Gloss Paints</h3>
             </div>
-            <p class="catalogue-category__status" data-category-empty>Verified product details will be listed here when available.</p>
             <div class="catalogue-category__products" data-product-list="gloss-paints"></div>
           </section>
           <section class="catalogue-category" id="matt-paints" aria-labelledby="matt-paints-title">
@@ -81,7 +92,6 @@
               <span class="catalogue-category__index" aria-hidden="true">03</span>
               <h3 class="catalogue-category__title" id="matt-paints-title">Matt Paints</h3>
             </div>
-            <p class="catalogue-category__status" data-category-empty>Verified product details will be listed here when available.</p>
             <div class="catalogue-category__products" data-product-list="matt-paints"></div>
           </section>
           <section class="catalogue-category" id="primers-sealers" aria-labelledby="primers-sealers-title">
@@ -89,36 +99,47 @@
               <span class="catalogue-category__index" aria-hidden="true">04</span>
               <h3 class="catalogue-category__title" id="primers-sealers-title">Primers &amp; Sealers</h3>
             </div>
-            <p class="catalogue-category__status" data-category-empty>Verified product details will be listed here when available.</p>
             <div class="catalogue-category__products" data-product-list="primers-sealers"></div>
+          </section>
+          <section class="catalogue-category" id="screedings" aria-labelledby="screedings-title">
+            <div class="catalogue-category__heading">
+              <span class="catalogue-category__index" aria-hidden="true">05</span>
+              <h3 class="catalogue-category__title" id="screedings-title">Screedings</h3>
+            </div>
+            <div class="catalogue-category__products" data-product-list="screedings">
+              <article class="catalogue-product-card" data-product-id="pop-screeding">
+                <figure class="catalogue-product-card__media">
+                  <img class="catalogue-product-card__image" src="../images/products/fesolux-pop-screeding.png" alt="Fesolux POP Screeding product bucket" width="768" height="1024" loading="lazy" decoding="async">
+                </figure>
+                <div class="catalogue-product-card__body">
+                  <p class="catalogue-product-card__category">Screedings</p>
+                  <h4 class="catalogue-product-card__title">POP Screeding</h4>
+                  <div class="catalogue-product-card__details" id="pop-screeding-details">
+                    <p class="catalogue-product-card__description">Provides a suitable base for preparing smooth surfaces.</p>
+                    <p class="catalogue-product-card__recommendation"><span>Recommended for</span>Surface preparation before applying paint or other finishing treatments.</p>
+                  </div>
+                  <button class="catalogue-product-card__read-more" type="button" aria-expanded="false" aria-controls="pop-screeding-details" hidden>Read more</button>
+                  <p class="catalogue-product-card__price" aria-label="Price: 7,400 naira"><data value="7400">₦7,400</data></p>
+                  <a class="catalogue-product-card__action" href="contact.html" aria-label="Contact Fesolux about POP Screeding">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L22 8H6M10 21h.01M18 21h.01"/></svg>
+                    <span>Contact Fesolux</span>
+                  </a>
+                </div>
+              </article>
+            </div>
           </section>
         </div>
       </div>
     </section>
   </main>
 
-  <template id="product-card-template">
-    <article class="catalogue-product-card">
-      <figure class="catalogue-product-card__media">
-        <img class="catalogue-product-card__image" data-product-image alt="" loading="lazy" decoding="async">
-      </figure>
-      <div class="catalogue-product-card__body">
-        <h3 class="catalogue-product-card__title" data-product-name></h3>
-        <p class="catalogue-product-card__description" data-product-description></p>
-        <p class="catalogue-product-card__price"><span data-product-price></span> <span data-product-unit></span></p>
-        <button class="button button--primary catalogue-product-card__order" type="button" disabled aria-label="Order Now. Ordering will be available soon.">Order Now</button>
-        <p class="catalogue-product-card__note">Ordering will be available soon.</p>
-      </div>
-    </article>
-  </template>
-
   <footer class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__grid">
-        <div><img class="site-footer__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo"><p class="site-footer__text">We offer paint solutions to help you prepare, refresh and finish your spaces with confidence.</p></div>
+        <div><img class="site-footer__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo"><p class="site-footer__text">Our Emulsion paint is suitable for all kinds of walls.</p></div>
         <div><h2 class="site-footer__title">Quick Links</h2><div class="site-footer__links"><a class="site-footer__link" href="../index.html">Home</a><a class="site-footer__link" href="about.html">About Us</a><a class="site-footer__link" href="contact.html">Contact</a></div></div>
         <div><h2 class="site-footer__title">Explore</h2><div class="site-footer__links"><a class="site-footer__link" href="products.html">Products</a><a class="site-footer__link" href="colours.html">Colours</a><a class="site-footer__link" href="projects.html">Projects</a></div></div>
-        <div><h2 class="site-footer__title">Contact</h2><p class="site-footer__text">Have questions about our paint categories? Get in touch with Fesolux Paints.</p></div>
+        <div><h2 class="site-footer__title">Product range</h2><p class="site-footer__text">Emulsion Paints, Gloss Paints, Matt Paints, Primers &amp; Sealers, and Screedings.</p></div>
       </div>
       <div class="site-footer__bottom">&copy; <span id="current-year"></span> Fesolux Paints. All rights reserved.</div>
     </div>
