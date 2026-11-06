@@ -142,3 +142,16 @@
   .colour-detail-dialog__actions { align-items: stretch; flex-direction: column; }
   .colour-detail-dialog__enquire, .colour-detail-dialog__copy { width: 100%; }
 }
+
+/* Services dropdown and landing page */
+@media (max-width: 768px) {
+  .site-header__dropdown { display: flex; width: 100%; flex-direction: column; align-items: stretch; }
+  .site-header__dropdown-toggle { justify-content: center; width: 100%; text-align: center; }
+  .site-header__dropdown-menu { position: static; min-width: 0; width: 100%; margin: .15rem 0 .35rem; padding: .25rem; border-color: rgba(255,255,255,.18); border-radius: 9px; background: rgba(255,255,255,.09); box-shadow: none; }
+  .site-header__dropdown-link { padding: .65rem .5rem; color: rgba(255,255,255,.92); text-align: center; }
+  .site-header__dropdown-link:hover, .site-header__dropdown-link:focus-visible, .site-header__dropdown-link[aria-current="page"] { color: var(--color-white); background: rgba(255,255,255,.14); }
+  .services-overview { padding-block: 3.5rem; }
+  .services-overview__grid { grid-template-columns: 1fr; gap: .8rem; }
+  .services-option { min-height: 0; padding: 1.2rem; }
+  .services-page-note__inner { align-items: flex-start; flex-direction: column; }
+}
