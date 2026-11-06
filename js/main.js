@@ -203,6 +203,163 @@ function initializeCatalogue() {
 
 initializeCatalogue();
 
+
+function initializeColourCatalogue() {
+  const page = document.querySelector(".colours-page");
+  if (!page) return;
+
+  const searchInput = page.querySelector("#colour-search-input");
+  const clearSearchButton = page.querySelector("#colour-search-clear");
+  const filterButtons = Array.from(page.querySelectorAll("[data-colour-filter]"));
+  const cards = Array.from(page.querySelectorAll("[data-colour-card]"));
+  const resultsStatus = page.querySelector("#colour-results-status");
+  const emptyState = page.querySelector("#colour-empty-state");
+  const resetButton = page.querySelector("#colour-reset");
+  const detailDialog = page.querySelector("#colour-detail-dialog");
+  const detailSwatch = page.querySelector("#colour-detail-swatch");
+  const detailName = page.querySelector("#colour-detail-name");
+  const detailFamily = page.querySelector("#colour-detail-family");
+  const detailCode = page.querySelector("#colour-detail-code");
+  const detailDescription = page.querySelector("#colour-detail-description");
+  const detailClose = page.querySelector("#colour-detail-close");
+  const copyButton = page.querySelector("#colour-detail-copy");
+  const copyStatus = page.querySelector("#colour-detail-copy-status");
+
+  if (!searchInput || !filterButtons.length || !cards.length || !detailDialog) return;
+
+  const familyNames = { blue: "Blues", yellow: "Yellows", white: "Whites" };
+  let activeFamily = "all";
+  let selectedShade = null;
+
+  function applyColourFilters() {
+    const query = searchInput.value.trim().toLocaleLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const familyMatches = activeFamily === "all" || card.dataset.colourFamily === activeFamily;
+      const searchableText = [
+        card.dataset.colourName,
+        card.dataset.colourCode,
+        card.dataset.colourFamily
+      ].filter(Boolean).join(" ").toLocaleLowerCase();
+      const searchMatches = !query || searchableText.includes(query);
+      const visible = familyMatches && searchMatches;
+
+      card.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+
+    filterButtons.forEach((button) => {
+      const isActive = button.dataset.colourFilter === activeFamily;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    if (clearSearchButton) clearSearchButton.hidden = query.length === 0;
+    if (emptyState) emptyState.hidden = visibleCount > 0;
+
+    if (resultsStatus) {
+      resultsStatus.textContent = query || activeFamily !== "all"
+        ? `Showing ${visibleCount} of ${cards.length} colour samples`
+        : `Showing ${visibleCount} colour samples`;
+    }
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeFamily = button.dataset.colourFilter || "all";
+      applyColourFilters();
+    });
+  });
+
+  searchInput.addEventListener("input", applyColourFilters);
+
+  clearSearchButton?.addEventListener("click", () => {
+    searchInput.value = "";
+    applyColourFilters();
+    searchInput.focus();
+  });
+
+  resetButton?.addEventListener("click", () => {
+    activeFamily = "all";
+    searchInput.value = "";
+    applyColourFilters();
+    searchInput.focus();
+  });
+
+  page.querySelectorAll("[data-inspiration-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      activeFamily = button.dataset.inspirationFilter || "all";
+      searchInput.value = "";
+      applyColourFilters();
+      page.querySelector("#colour-catalogue")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      searchInput.focus({ preventScroll: true });
+    });
+  });
+
+  function openShadeDetails(card) {
+    selectedShade = {
+      name: card.dataset.colourName || "Colour sample",
+      family: familyNames[card.dataset.colourFamily] || "Colour",
+      code: card.dataset.colourCode || "",
+      value: card.dataset.colourValue || "#ffffff",
+      description: card.querySelector(".colour-card__description")?.textContent.trim() || ""
+    };
+
+    detailSwatch.style.backgroundColor = selectedShade.value;
+    detailName.textContent = selectedShade.name;
+    detailFamily.textContent = selectedShade.family;
+    detailDescription.textContent = selectedShade.description;
+
+    if (selectedShade.code) {
+      detailCode.textContent = `Shade code: ${selectedShade.code}`;
+      detailCode.hidden = false;
+    } else {
+      detailCode.textContent = "";
+      detailCode.hidden = true;
+    }
+
+    if (copyStatus) copyStatus.textContent = "";
+    if (typeof detailDialog.showModal === "function") detailDialog.showModal();
+    else detailDialog.setAttribute("open", "");
+  }
+
+  page.querySelector("#colour-grid")?.addEventListener("click", (event) => {
+    const card = event.target instanceof Element ? event.target.closest("[data-colour-card]") : null;
+    const grid = page.querySelector("#colour-grid");
+    if (card && grid?.contains(card) && !card.hidden) openShadeDetails(card);
+  });
+
+  function closeShadeDetails() {
+    if (typeof detailDialog.close === "function" && detailDialog.open) detailDialog.close();
+    else detailDialog.removeAttribute("open");
+  }
+
+  detailClose?.addEventListener("click", closeShadeDetails);
+  detailDialog.addEventListener("click", (event) => {
+    if (event.target === detailDialog) closeShadeDetails();
+  });
+
+  copyButton?.addEventListener("click", async () => {
+    if (!selectedShade || !copyStatus) return;
+
+    const lines = [`Colour: ${selectedShade.name}`, `Family: ${selectedShade.family}`];
+    if (selectedShade.code) lines.push(`Shade code: ${selectedShade.code}`);
+
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error("Clipboard access is unavailable");
+      await navigator.clipboard.writeText(lines.join("\n"));
+      copyStatus.textContent = "Shade details copied.";
+    } catch {
+      copyStatus.textContent = "Copy is unavailable here. Please note the shade name and family.";
+    }
+  });
+
+  applyColourFilters();
+}
+
+initializeColourCatalogue();
+
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) {
     initializeNavigation();
