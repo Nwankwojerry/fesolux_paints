@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore Fesolux Paints colour samples by shade family and name.">
+  <meta name="description" content="Explore a broad palette of paint colour previews from Fesolux Paints. Browse shades, compare colour families and enquire about a sample.">
   <title>Paint Colours | Fesolux Paints</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
@@ -24,12 +24,26 @@
     <a class="site-header__cta" href="contact.html">Get in Touch</a>
   </nav>
 </header>
+
 <main id="main-content" class="colours-page">
   <section class="page-hero colour-page-hero" aria-labelledby="colour-page-title">
-    <div class="page-hero__inner">
-      <p class="colour-page-hero__eyebrow">Fesolux Colours</p>
-      <h1 class="page-hero__title" id="colour-page-title">Find Your Perfect Colour</h1>
-      <p class="colour-page-hero__copy">Explore our colour samples and find a shade that feels right for your space.</p>
+    <div class="page-hero__inner colour-page-hero__inner">
+      <div class="colour-page-hero__content">
+        <p class="colour-page-hero__eyebrow">Fesolux Colours</p>
+        <h1 class="page-hero__title" id="colour-page-title">Find the colour that feels like yours.</h1>
+        <p class="colour-page-hero__copy">From soft neutrals to confident statement shades, explore a wider palette and find a direction for your next space.</p>
+        <a class="colour-page-hero__button" href="#colour-catalogue">Explore the palette <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="colour-hero-palette" aria-label="A selection of colours from the palette">
+        <span style="--palette-colour:#F5F4EF"></span>
+        <span style="--palette-colour:#D4D8DA"></span>
+        <span style="--palette-colour:#8EC8EA"></span>
+        <span style="--palette-colour:#1238C9"></span>
+        <span style="--palette-colour:#A2B59A"></span>
+        <span style="--palette-colour:#FFD400"></span>
+        <span style="--palette-colour:#B75E43"></span>
+        <span style="--palette-colour:#4A3129"></span>
+      </div>
       <div class="breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page">Colours</span></div>
     </div>
   </section>
@@ -39,77 +53,445 @@
       <div class="colour-catalogue__heading">
         <div>
           <p class="section__eyebrow">Explore the palette</p>
-          <h2 class="section__title" id="colour-catalogue-title">Browse colour samples</h2>
+          <h2 class="section__title" id="colour-catalogue-title">A shade for every kind of space</h2>
         </div>
-        <p class="colour-catalogue__intro">Search by shade name or use the colour families to narrow your selection.</p>
+        <p class="colour-catalogue__intro">Browse by colour family, search for a shade, or open any sample to see its reference and enquire about it.</p>
       </div>
 
       <div class="colour-tools">
         <div class="colour-search">
-          <label class="colour-visually-hidden" for="colour-search-input">Search by colour name or shade code</label>
-          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
-          <input id="colour-search-input" type="search" placeholder="Search by colour name or code..." autocomplete="off" spellcheck="false">
+          <label class="colour-visually-hidden" for="colour-search-input">Search by colour name, sample reference or HEX value</label>
+          <input id="colour-search-input" type="search" placeholder="Search a colour, reference or HEX value..." autocomplete="off" spellcheck="false">
           <button class="colour-search__clear" id="colour-search-clear" type="button" hidden>Clear</button>
         </div>
         <div class="colour-filters" role="group" aria-label="Filter colour samples by family">
-          <button class="colour-filter is-active" type="button" data-colour-filter="all" aria-pressed="true">All Colours</button>
+          <button class="colour-filter is-active" type="button" data-colour-filter="all" aria-pressed="true">All colours</button>
+          <button class="colour-filter" type="button" data-colour-filter="neutral" aria-pressed="false">Whites & creams</button>
+          <button class="colour-filter" type="button" data-colour-filter="grey" aria-pressed="false">Greys</button>
           <button class="colour-filter" type="button" data-colour-filter="blue" aria-pressed="false">Blues</button>
+          <button class="colour-filter" type="button" data-colour-filter="green" aria-pressed="false">Greens</button>
           <button class="colour-filter" type="button" data-colour-filter="yellow" aria-pressed="false">Yellows</button>
-          <button class="colour-filter" type="button" data-colour-filter="white" aria-pressed="false">Whites</button>
+          <button class="colour-filter" type="button" data-colour-filter="red" aria-pressed="false">Reds</button>
+          <button class="colour-filter" type="button" data-colour-filter="brown" aria-pressed="false">Browns</button>
+          <button class="colour-filter" type="button" data-colour-filter="other" aria-pressed="false">Other shades</button>
         </div>
       </div>
 
-      <p class="colour-results-status" id="colour-results-status" role="status" aria-live="polite">Showing 4 colour samples</p>
+      <div class="colour-results-heading">
+        <p class="colour-results-status" id="colour-results-status" role="status" aria-live="polite">Showing 44 colour samples</p>
+        <span>Choose a shade to view its details</span>
+      </div>
 
       <div class="colour-grid" id="colour-grid">
-        <button class="colour-card" type="button" data-colour-card data-colour-name="Royal Blue" data-colour-family="blue" data-colour-value="#1238c9" data-colour-code="" aria-haspopup="dialog">
-          <span class="colour-card__swatch colour-card__swatch--blue" style="--sample-colour:#1238c9" aria-hidden="true"></span>
+
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Pure White" data-colour-family="neutral" data-colour-value="#FFFFFF" data-colour-code="FC-WH-001" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#FFFFFF" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Pure White</span>
+            <span class="colour-card__family">Whites & creams</span>
+            <span class="colour-card__description">A crisp, bright white for clean and open-looking spaces.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-WH-001</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Soft White" data-colour-family="neutral" data-colour-value="#F5F4EF" data-colour-code="FC-WH-002" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#F5F4EF" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Soft White</span>
+            <span class="colour-card__family">Whites & creams</span>
+            <span class="colour-card__description">A gentle off-white that feels softer than a brilliant white.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-WH-002</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Pearl White" data-colour-family="neutral" data-colour-value="#EEECE4" data-colour-code="FC-WH-003" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#EEECE4" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Pearl White</span>
+            <span class="colour-card__family">Whites & creams</span>
+            <span class="colour-card__description">A subtle warm white with a quiet, refined character.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-WH-003</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Ivory Cream" data-colour-family="neutral" data-colour-value="#FFF0D5" data-colour-code="FC-WH-004" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#FFF0D5" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Ivory Cream</span>
+            <span class="colour-card__family">Whites & creams</span>
+            <span class="colour-card__description">A creamy neutral that brings warmth without becoming too bold.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-WH-004</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Warm Cream" data-colour-family="neutral" data-colour-value="#F4E5C2" data-colour-code="FC-WH-005" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#F4E5C2" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Warm Cream</span>
+            <span class="colour-card__family">Whites & creams</span>
+            <span class="colour-card__description">A welcoming cream tone for relaxed interior spaces.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-WH-005</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Sand Beige" data-colour-family="neutral" data-colour-value="#DCC9A6" data-colour-code="FC-WH-006" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#DCC9A6" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Sand Beige</span>
+            <span class="colour-card__family">Whites & creams</span>
+            <span class="colour-card__description">A natural beige that pairs easily with wood and earthy accents.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-WH-006</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Mist Grey" data-colour-family="grey" data-colour-value="#D4D8DA" data-colour-code="FC-GY-001" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#D4D8DA" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Mist Grey</span>
+            <span class="colour-card__family">Greys</span>
+            <span class="colour-card__description">A pale grey that keeps a room light while adding gentle definition.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GY-001</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Silver Grey" data-colour-family="grey" data-colour-value="#B8BEC3" data-colour-code="FC-GY-002" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#B8BEC3" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Silver Grey</span>
+            <span class="colour-card__family">Greys</span>
+            <span class="colour-card__description">A balanced mid-light grey with a cool, modern feel.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GY-002</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Ash Grey" data-colour-family="grey" data-colour-value="#8D9298" data-colour-code="FC-GY-003" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#8D9298" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Ash Grey</span>
+            <span class="colour-card__family">Greys</span>
+            <span class="colour-card__description">A versatile grey that sits comfortably between light and dark.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GY-003</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Slate Grey" data-colour-family="grey" data-colour-value="#68727D" data-colour-code="FC-GY-004" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#68727D" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Slate Grey</span>
+            <span class="colour-card__family">Greys</span>
+            <span class="colour-card__description">A deeper grey suited to stronger contrasts and feature areas.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GY-004</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Charcoal Grey" data-colour-family="grey" data-colour-value="#3A414B" data-colour-code="FC-GY-005" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#3A414B" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Charcoal Grey</span>
+            <span class="colour-card__family">Greys</span>
+            <span class="colour-card__description">A dark, confident grey for a dramatic and contemporary look.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GY-005</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Powder Blue" data-colour-family="blue" data-colour-value="#C6DCEC" data-colour-code="FC-BL-001" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#C6DCEC" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Powder Blue</span>
+            <span class="colour-card__family">Blues</span>
+            <span class="colour-card__description">A soft blue with a calm, airy character.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BL-001</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Sky Blue" data-colour-family="blue" data-colour-value="#8EC8EA" data-colour-code="FC-BL-002" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#8EC8EA" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Sky Blue</span>
+            <span class="colour-card__family">Blues</span>
+            <span class="colour-card__description">A fresh, open blue inspired by clear skies.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BL-002</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Ocean Blue" data-colour-family="blue" data-colour-value="#267FAD" data-colour-code="FC-BL-003" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#267FAD" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Ocean Blue</span>
+            <span class="colour-card__family">Blues</span>
+            <span class="colour-card__description">A lively blue with a little more depth and presence.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BL-003</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Royal Blue" data-colour-family="blue" data-colour-value="#1238C9" data-colour-code="FC-BL-004" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#1238C9" aria-hidden="true"></span>
           <span class="colour-card__info">
             <span class="colour-card__name">Royal Blue</span>
             <span class="colour-card__family">Blues</span>
             <span class="colour-card__description">A bold, confident shade that brings depth and character to a space.</span>
-            <span class="colour-card__action">View shade details <span aria-hidden="true">→</span></span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BL-004</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
           </span>
         </button>
-
-        <button class="colour-card" type="button" data-colour-card data-colour-name="Fesolux Yellow" data-colour-family="yellow" data-colour-value="#ffd400" data-colour-code="" aria-haspopup="dialog">
-          <span class="colour-card__swatch" style="--sample-colour:#ffd400" aria-hidden="true"></span>
-          <span class="colour-card__info">
-            <span class="colour-card__name">Fesolux Yellow</span>
-            <span class="colour-card__family">Yellows</span>
-            <span class="colour-card__description">A bright, energetic shade that adds warmth and a lively touch.</span>
-            <span class="colour-card__action">View shade details <span aria-hidden="true">→</span></span>
-          </span>
-        </button>
-
-        <button class="colour-card" type="button" data-colour-card data-colour-name="White" data-colour-family="white" data-colour-value="#ffffff" data-colour-code="" aria-haspopup="dialog">
-          <span class="colour-card__swatch colour-card__swatch--white" style="--sample-colour:#ffffff" aria-hidden="true"></span>
-          <span class="colour-card__info">
-            <span class="colour-card__name">White</span>
-            <span class="colour-card__family">Whites</span>
-            <span class="colour-card__description">A clean, versatile choice that keeps spaces feeling fresh and open.</span>
-            <span class="colour-card__action">View shade details <span aria-hidden="true">→</span></span>
-          </span>
-        </button>
-
-        <button class="colour-card" type="button" data-colour-card data-colour-name="Deep Blue" data-colour-family="blue" data-colour-value="#06249a" data-colour-code="" aria-haspopup="dialog">
-          <span class="colour-card__swatch" style="--sample-colour:#06249a" aria-hidden="true"></span>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Deep Blue" data-colour-family="blue" data-colour-value="#06249A" data-colour-code="FC-BL-005" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#06249A" aria-hidden="true"></span>
           <span class="colour-card__info">
             <span class="colour-card__name">Deep Blue</span>
             <span class="colour-card__family">Blues</span>
             <span class="colour-card__description">A rich, strong shade for spaces that call for deeper colour and contrast.</span>
-            <span class="colour-card__action">View shade details <span aria-hidden="true">→</span></span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BL-005</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Navy Blue" data-colour-family="blue" data-colour-value="#17264F" data-colour-code="FC-BL-006" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#17264F" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Navy Blue</span>
+            <span class="colour-card__family">Blues</span>
+            <span class="colour-card__description">A classic dark blue that creates a composed, grounded finish.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BL-006</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Mint Green" data-colour-family="green" data-colour-value="#A9D7BB" data-colour-code="FC-GN-001" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#A9D7BB" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Mint Green</span>
+            <span class="colour-card__family">Greens</span>
+            <span class="colour-card__description">A light green that gives a space a fresh, relaxed feel.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GN-001</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Sage Green" data-colour-family="green" data-colour-value="#A2B59A" data-colour-code="FC-GN-002" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#A2B59A" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Sage Green</span>
+            <span class="colour-card__family">Greens</span>
+            <span class="colour-card__description">A muted green that works naturally with warm neutrals.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GN-002</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Olive Green" data-colour-family="green" data-colour-value="#858B45" data-colour-code="FC-GN-003" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#858B45" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Olive Green</span>
+            <span class="colour-card__family">Greens</span>
+            <span class="colour-card__description">An earthy green with a grounded, understated character.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GN-003</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Leaf Green" data-colour-family="green" data-colour-value="#5B9A62" data-colour-code="FC-GN-004" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#5B9A62" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Leaf Green</span>
+            <span class="colour-card__family">Greens</span>
+            <span class="colour-card__description">A lively natural green that brings freshness to a wall.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GN-004</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Emerald Green" data-colour-family="green" data-colour-value="#16865A" data-colour-code="FC-GN-005" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#16865A" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Emerald Green</span>
+            <span class="colour-card__family">Greens</span>
+            <span class="colour-card__description">A rich green that adds colour and a confident focal point.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GN-005</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Forest Green" data-colour-family="green" data-colour-value="#1D563A" data-colour-code="FC-GN-006" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#1D563A" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Forest Green</span>
+            <span class="colour-card__family">Greens</span>
+            <span class="colour-card__description">A deep green with a calm, dramatic presence.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-GN-006</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Pale Yellow" data-colour-family="yellow" data-colour-value="#FFF2A6" data-colour-code="FC-YL-001" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#FFF2A6" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Pale Yellow</span>
+            <span class="colour-card__family">Yellows</span>
+            <span class="colour-card__description">A delicate yellow that adds a gentle touch of warmth.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-YL-001</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Lemon Yellow" data-colour-family="yellow" data-colour-value="#F6E65B" data-colour-code="FC-YL-002" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#F6E65B" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Lemon Yellow</span>
+            <span class="colour-card__family">Yellows</span>
+            <span class="colour-card__description">A bright, lively yellow that feels fresh and cheerful.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-YL-002</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Fesolux Yellow" data-colour-family="yellow" data-colour-value="#FFD400" data-colour-code="FC-YL-003" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#FFD400" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Fesolux Yellow</span>
+            <span class="colour-card__family">Yellows</span>
+            <span class="colour-card__description">A bright, energetic shade that adds warmth and a lively touch.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-YL-003</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Golden Yellow" data-colour-family="yellow" data-colour-value="#F2B600" data-colour-code="FC-YL-004" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#F2B600" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Golden Yellow</span>
+            <span class="colour-card__family">Yellows</span>
+            <span class="colour-card__description">A warm golden tone with a richer, more saturated finish.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-YL-004</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Mustard Yellow" data-colour-family="yellow" data-colour-value="#C9951A" data-colour-code="FC-YL-005" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#C9951A" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Mustard Yellow</span>
+            <span class="colour-card__family">Yellows</span>
+            <span class="colour-card__description">An earthy yellow that adds warmth and character.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-YL-005</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Soft Rose" data-colour-family="red" data-colour-value="#D99A9A" data-colour-code="FC-RD-001" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#D99A9A" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Soft Rose</span>
+            <span class="colour-card__family">Reds</span>
+            <span class="colour-card__description">A muted rose tone that adds warmth without overpowering a room.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-RD-001</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Coral Red" data-colour-family="red" data-colour-value="#F07866" data-colour-code="FC-RD-002" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#F07866" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Coral Red</span>
+            <span class="colour-card__family">Reds</span>
+            <span class="colour-card__description">A warm red with a lively hint of orange.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-RD-002</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Scarlet Red" data-colour-family="red" data-colour-value="#D23A32" data-colour-code="FC-RD-003" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#D23A32" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Scarlet Red</span>
+            <span class="colour-card__family">Reds</span>
+            <span class="colour-card__description">A vivid red for bold accents and statement areas.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-RD-003</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Brick Red" data-colour-family="red" data-colour-value="#9D4036" data-colour-code="FC-RD-004" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#9D4036" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Brick Red</span>
+            <span class="colour-card__family">Reds</span>
+            <span class="colour-card__description">An earthy red with a settled, traditional feel.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-RD-004</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Burgundy" data-colour-family="red" data-colour-value="#641D35" data-colour-code="FC-RD-005" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#641D35" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Burgundy</span>
+            <span class="colour-card__family">Reds</span>
+            <span class="colour-card__description">A deep red that creates a rich and dramatic accent.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-RD-005</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Sandstone" data-colour-family="brown" data-colour-value="#C6A27A" data-colour-code="FC-BR-001" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#C6A27A" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Sandstone</span>
+            <span class="colour-card__family">Browns</span>
+            <span class="colour-card__description">A soft earth tone that sits naturally with creams and warm whites.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BR-001</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Caramel" data-colour-family="brown" data-colour-value="#B97845" data-colour-code="FC-BR-002" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#B97845" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Caramel</span>
+            <span class="colour-card__family">Browns</span>
+            <span class="colour-card__description">A warm brown with a smooth, inviting character.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BR-002</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Terracotta" data-colour-family="brown" data-colour-value="#B75E43" data-colour-code="FC-BR-003" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#B75E43" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Terracotta</span>
+            <span class="colour-card__family">Browns</span>
+            <span class="colour-card__description">A sun-warmed clay tone that brings an earthy accent.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BR-003</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Cocoa Brown" data-colour-family="brown" data-colour-value="#694936" data-colour-code="FC-BR-004" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#694936" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Cocoa Brown</span>
+            <span class="colour-card__family">Browns</span>
+            <span class="colour-card__description">A deep, balanced brown that adds warmth and weight.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BR-004</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Walnut Brown" data-colour-family="brown" data-colour-value="#4A3129" data-colour-code="FC-BR-005" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#4A3129" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Walnut Brown</span>
+            <span class="colour-card__family">Browns</span>
+            <span class="colour-card__description">A dark natural brown for a grounded, classic palette.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-BR-005</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Lavender" data-colour-family="other" data-colour-value="#B8A6D9" data-colour-code="FC-OT-001" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#B8A6D9" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Lavender</span>
+            <span class="colour-card__family">Other shades</span>
+            <span class="colour-card__description">A gentle violet that adds a soft note of colour.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-OT-001</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Lilac" data-colour-family="other" data-colour-value="#D5C4EA" data-colour-code="FC-OT-002" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#D5C4EA" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Lilac</span>
+            <span class="colour-card__family">Other shades</span>
+            <span class="colour-card__description">A pale purple with a light, delicate finish.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-OT-002</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Peach" data-colour-family="other" data-colour-value="#F2B995" data-colour-code="FC-OT-003" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#F2B995" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Peach</span>
+            <span class="colour-card__family">Other shades</span>
+            <span class="colour-card__description">A warm pastel that brings a soft glow to interiors.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-OT-003</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Teal" data-colour-family="other" data-colour-value="#207B79" data-colour-code="FC-OT-004" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#207B79" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Teal</span>
+            <span class="colour-card__family">Other shades</span>
+            <span class="colour-card__description">A balanced blue-green with depth and personality.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-OT-004</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Turquoise" data-colour-family="other" data-colour-value="#38B8B5" data-colour-code="FC-OT-005" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#38B8B5" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Turquoise</span>
+            <span class="colour-card__family">Other shades</span>
+            <span class="colour-card__description">A bright blue-green that adds an energetic accent.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-OT-005</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
+          </span>
+        </button>
+        <button class="colour-card" type="button" data-colour-card data-colour-name="Plum" data-colour-family="other" data-colour-value="#664367" data-colour-code="FC-OT-006" aria-haspopup="dialog">
+          <span class="colour-card__swatch" style="--sample-colour:#664367" aria-hidden="true"></span>
+          <span class="colour-card__info">
+            <span class="colour-card__name">Plum</span>
+            <span class="colour-card__family">Other shades</span>
+            <span class="colour-card__description">A rich purple with a sophisticated, moody character.</span>
+            <span class="colour-card__meta"><span class="colour-card__reference">Ref. FC-OT-006</span><span class="colour-card__action">View shade <span aria-hidden="true">→</span></span></span>
           </span>
         </button>
       </div>
 
       <div class="colour-empty-state" id="colour-empty-state" hidden>
         <h3>No matching colours</h3>
-        <p>Try another shade name or choose a different colour family.</p>
+        <p>Try another shade name, reference or colour family.</p>
         <button class="colour-empty-state__reset" id="colour-reset" type="button">Show all colours</button>
       </div>
 
-      <p class="colour-accuracy-note">Screen settings and lighting can affect how a colour appears. Use these previews as a guide and confirm the actual shade before making your final choice.</p>
+      <div class="colour-reference-note">
+        <span class="colour-reference-note__mark" aria-hidden="true">i</span>
+        <p>Each <strong>FC reference</strong> identifies a digital sample on this page. These are website sample references, not official manufacturer shade codes. Colour previews can vary by screen and lighting, so confirm the final shade with Fesolux before purchase.</p>
+      </div>
     </div>
   </section>
 
@@ -117,33 +499,64 @@
     <div class="section__inner">
       <div class="colour-inspiration__heading">
         <div>
-          <p class="section__eyebrow">A little inspiration</p>
-          <h2 class="section__title" id="colour-inspiration-title">Start with a colour direction</h2>
+          <p class="section__eyebrow">Colour in the home</p>
+          <h2 class="section__title" id="colour-inspiration-title">Picture the possibilities</h2>
         </div>
-        <p class="colour-inspiration__intro">A few ways to think about the samples when planning a room or feature wall.</p>
+        <p class="colour-inspiration__intro">Explore colour directions for living rooms, bedrooms, feature walls and exterior finishes.</p>
       </div>
+
       <div class="colour-inspiration__grid">
-        <article class="colour-inspiration-card">
-          <div class="colour-inspiration-card__swatches" aria-hidden="true"><span style="--sample-colour:#ffffff"></span><span style="--sample-colour:#ffd400"></span></div>
-          <p class="colour-inspiration-card__eyebrow">Living spaces</p>
-          <h3>Light and welcoming</h3>
-          <p>White offers a clean starting point, while a touch of yellow can bring warmth into the overall palette.</p>
-          <button type="button" class="colour-inspiration-card__link" data-inspiration-filter="white">Explore White <span aria-hidden="true">→</span></button>
-        </article>
-        <article class="colour-inspiration-card">
-          <div class="colour-inspiration-card__swatches" aria-hidden="true"><span style="--sample-colour:#1238c9"></span><span style="--sample-colour:#06249a"></span></div>
-          <p class="colour-inspiration-card__eyebrow">Feature walls</p>
-          <h3>Blue with contrast</h3>
-          <p>Royal Blue and Deep Blue offer two different levels of depth for a more defined colour direction.</p>
-          <button type="button" class="colour-inspiration-card__link" data-inspiration-filter="blue">Explore Blues <span aria-hidden="true">→</span></button>
-        </article>
-        <article class="colour-inspiration-card">
-          <div class="colour-inspiration-card__swatches" aria-hidden="true"><span style="--sample-colour:#ffd400"></span><span style="--sample-colour:#ffffff"></span></div>
-          <p class="colour-inspiration-card__eyebrow">Accent details</p>
-          <h3>A brighter note</h3>
-          <p>Fesolux Yellow can be considered for a bright accent alongside a quieter shade such as White.</p>
-          <button type="button" class="colour-inspiration-card__link" data-inspiration-filter="yellow">Explore Yellows <span aria-hidden="true">→</span></button>
-        </article>
+        <figure class="colour-inspiration-photo">
+          <div class="colour-inspiration-photo__media" data-photo-slot="living-room">
+            <div class="colour-inspiration-photo__fallback colour-inspiration-photo__fallback--living" aria-hidden="true"><span>Living room</span></div>
+            <img class="colour-inspiration-photo__image" src="../images/colour-inspiration/living-room.jpg" alt="Living room with a considered neutral and accent colour palette" loading="lazy">
+          </div>
+          <figcaption class="colour-inspiration-photo__caption">
+            <span class="colour-inspiration-photo__eyebrow">Interior palette</span>
+            <h3>Warm, welcoming living spaces</h3>
+            <p>Layer soft whites, creams and subtle accent shades for a relaxed feel.</p>
+            <a href="#colour-catalogue" data-inspiration-filter="neutral">Explore neutrals <span aria-hidden="true">→</span></a>
+          </figcaption>
+        </figure>
+
+        <figure class="colour-inspiration-photo">
+          <div class="colour-inspiration-photo__media" data-photo-slot="bedroom-feature-wall">
+            <div class="colour-inspiration-photo__fallback colour-inspiration-photo__fallback--bedroom" aria-hidden="true"><span>Bedroom & feature wall</span></div>
+            <img class="colour-inspiration-photo__image" src="../images/colour-inspiration/bedroom-feature-wall.jpg" alt="Bedroom and feature wall colour inspiration" loading="lazy">
+          </div>
+          <figcaption class="colour-inspiration-photo__caption">
+            <span class="colour-inspiration-photo__eyebrow">Feature walls</span>
+            <h3>Make one wall stand out</h3>
+            <p>Use blues, greens or deeper shades to give a room a clear focal point.</p>
+            <a href="#colour-catalogue" data-inspiration-filter="blue">Explore blues <span aria-hidden="true">→</span></a>
+          </figcaption>
+        </figure>
+
+        <figure class="colour-inspiration-photo">
+          <div class="colour-inspiration-photo__media" data-photo-slot="exterior-home">
+            <div class="colour-inspiration-photo__fallback colour-inspiration-photo__fallback--exterior" aria-hidden="true"><span>Exterior finishes</span></div>
+            <img class="colour-inspiration-photo__image" src="../images/colour-inspiration/exterior-home.jpg" alt="House exterior showing coordinated wall colours" loading="lazy">
+          </div>
+          <figcaption class="colour-inspiration-photo__caption">
+            <span class="colour-inspiration-photo__eyebrow">Exterior colour</span>
+            <h3>A finish that welcomes you home</h3>
+            <p>Consider balanced neutrals, earthy browns and confident contrasting details.</p>
+            <a href="#colour-catalogue" data-inspiration-filter="brown">Explore earth tones <span aria-hidden="true">→</span></a>
+          </figcaption>
+        </figure>
+
+        <figure class="colour-inspiration-photo">
+          <div class="colour-inspiration-photo__media" data-photo-slot="accent-wall">
+            <div class="colour-inspiration-photo__fallback colour-inspiration-photo__fallback--accent" aria-hidden="true"><span>Colour accents</span></div>
+            <img class="colour-inspiration-photo__image" src="../images/colour-inspiration/accent-wall.jpg" alt="Interior wall with a bold colour accent" loading="lazy">
+          </div>
+          <figcaption class="colour-inspiration-photo__caption">
+            <span class="colour-inspiration-photo__eyebrow">Finishing touches</span>
+            <h3>Add character with an accent</h3>
+            <p>Bring a little energy into a space with yellows, reds and other expressive shades.</p>
+            <a href="#colour-catalogue" data-inspiration-filter="yellow">Explore brighter shades <span aria-hidden="true">→</span></a>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -151,43 +564,45 @@
   <section class="section colour-guidance" aria-labelledby="colour-guidance-title">
     <div class="section__inner colour-guidance__inner">
       <div>
-        <p class="section__eyebrow">Choosing with confidence</p>
-        <h2 class="section__title" id="colour-guidance-title">Need help choosing a shade?</h2>
+        <p class="section__eyebrow">Need a little help?</p>
+        <h2 class="section__title" id="colour-guidance-title">Found a shade you like?</h2>
       </div>
       <div>
-        <p>Open a sample to see its name and colour family. You can copy those details to include when discussing your choice with Fesolux.</p>
-        <p class="colour-guidance__note">The current samples do not yet include official shade codes. Confirm shade availability and any product-specific details before purchase.</p>
+        <p>Open the sample and choose <strong>Enquire about this colour</strong>. Your selected shade and reference will be carried to the Contact page so you can include them in your message.</p>
+        <a class="colour-guidance__link" href="contact.html">Talk to Fesolux about a colour <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
   <dialog class="colour-detail-dialog" id="colour-detail-dialog" aria-labelledby="colour-detail-name">
     <div class="colour-detail-dialog__top">
-      <p class="section__eyebrow">Colour details</p>
+      <p class="section__eyebrow">Shade details</p>
       <button class="colour-detail-dialog__close" id="colour-detail-close" type="button" aria-label="Close colour details">×</button>
     </div>
     <div class="colour-detail-dialog__swatch" id="colour-detail-swatch" aria-hidden="true"></div>
     <h2 id="colour-detail-name"></h2>
     <p class="colour-detail-dialog__family" id="colour-detail-family"></p>
-    <p class="colour-detail-dialog__code" id="colour-detail-code" hidden></p>
+    <p class="colour-detail-dialog__code" id="colour-detail-code"></p>
     <p class="colour-detail-dialog__description" id="colour-detail-description"></p>
-    <p class="colour-detail-dialog__note">This is an on-screen preview. Confirm the actual shade before choosing your paint.</p>
+    <p class="colour-detail-dialog__note">This is a digital preview. Screen settings and lighting can affect how a shade appears.</p>
     <div class="colour-detail-dialog__actions">
+      <a class="colour-detail-dialog__enquire" id="colour-detail-enquire" href="contact.html">Enquire about this colour <span aria-hidden="true">→</span></a>
       <button class="colour-detail-dialog__copy" id="colour-detail-copy" type="button">Copy shade details</button>
-      <span class="colour-detail-dialog__copy-status" id="colour-detail-copy-status" role="status" aria-live="polite"></span>
     </div>
+    <span class="colour-detail-dialog__copy-status" id="colour-detail-copy-status" role="status" aria-live="polite"></span>
   </dialog>
 </main>
+
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__grid">
       <div>
         <img class="site-footer__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo">
-        <p class="site-footer__text">A considered colour choice helps set the tone of a space. Explore these samples as a starting point.</p>
+        <p class="site-footer__text">The right colour helps bring a space together. Explore the palette and find a shade to start with.</p>
       </div>
       <div><h2 class="site-footer__title">Quick Links</h2><div class="site-footer__links"><a class="site-footer__link" href="../index.html">Home</a><a class="site-footer__link" href="about.html">About Us</a><a class="site-footer__link" href="products.html">Products</a></div></div>
       <div><h2 class="site-footer__title">Explore</h2><div class="site-footer__links"><a class="site-footer__link" href="colours.html">Colours</a><a class="site-footer__link" href="projects.html">Projects</a><a class="site-footer__link" href="contact.html">Contact</a></div></div>
-      <div><h2 class="site-footer__title">Colour enquiries</h2><p class="site-footer__text">When discussing a shade, refer to its name and colour family so the right sample can be identified.</p></div>
+      <div><h2 class="site-footer__title">Colour enquiries</h2><p class="site-footer__text">Have a shade in mind? Include its name and sample reference when making an enquiry.</p></div>
     </div>
     <div class="site-footer__bottom">&copy; <span id="current-year"></span> Fesolux Paints. All rights reserved.</div>
   </div>
