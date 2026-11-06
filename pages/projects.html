@@ -1,8 +1,148 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Fesolux Paints projects and applications."><title>Projects | Fesolux Paints</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore selected residential and commercial painting projects by Fesolux Paints.">
+  <title>Our Projects | Fesolux Paints</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
 <body>
-<header class="site-header"><a class="site-header__brand" href="../index.html" aria-label="Fesolux Paints home"><img class="site-header__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo"></a><button class="site-header__menu" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">☰</button><nav class="site-header__navigation" id="primary-navigation" aria-label="Primary navigation"><a class="site-header__link" href="../index.html">Home</a><a class="site-header__link" href="about.html">About Us</a><a class="site-header__link" href="products.html">Products</a><a class="site-header__link" href="colours.html">Colours</a><a class="site-header__link" href="projects.html" aria-current="page">Projects</a><a class="site-header__link" href="contact.html">Contact</a><a class="site-header__cta" href="contact.html">Get in Touch</a></nav></header>
-<main id="main-content"><section class="page-hero"><div class="page-hero__inner"><h1 class="page-hero__title">Projects</h1><div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span>Projects</span></div></div></section><section class="section section--soft"><div class="section__inner"><div class="section__header"><p class="section__eyebrow">Our projects</p><h2 class="section__title">Colour for spaces of every kind</h2><p class="section__copy">Every painting project has its own character and needs. We are ready to support your plans with paint solutions suited to the look and finish you want to achieve.</p></div><div class="info-panel"><h2>Planning your project?</h2><p>Tell us about the space you are working on and what you want to achieve. We will be glad to hear about your project and help you explore the available paint options.</p><a class="button button--primary" href="contact.html">Discuss a project</a></div></div></section></main>
-<footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__grid"><div><img class="site-footer__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo"><p class="site-footer__text">We are here to help you bring your painting ideas to life with colour and a finish you can be proud of.</p></div><div><h2 class="site-footer__title">Quick Links</h2><div class="site-footer__links"><a class="site-footer__link" href="../index.html">Home</a><a class="site-footer__link" href="about.html">About Us</a><a class="site-footer__link" href="products.html">Products</a></div></div><div><h2 class="site-footer__title">Explore</h2><div class="site-footer__links"><a class="site-footer__link" href="colours.html">Colours</a><a class="site-footer__link" href="projects.html">Projects</a><a class="site-footer__link" href="contact.html">Contact</a></div></div><div><h2 class="site-footer__title">Contact</h2><p class="site-footer__text">Have a project in mind? Get in touch with Fesolux Paints to discuss your painting needs.</p></div></div><div class="site-footer__bottom">&copy; <span id="current-year"></span> Fesolux Paints. All rights reserved.</div></div></footer><script src="../js/main.js" defer></script>
-</body></html>
+<header class="site-header">
+  <a class="site-header__brand" href="../index.html" aria-label="Fesolux Paints home">
+    <img class="site-header__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo">
+  </a>
+  <button class="site-header__menu" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">☰</button>
+  <nav class="site-header__navigation" id="primary-navigation" aria-label="Primary navigation">
+    <a class="site-header__link" href="../index.html">Home</a>
+    <a class="site-header__link" href="about.html">About Us</a>
+    <a class="site-header__link" href="products.html">Products</a>
+    <a class="site-header__link" href="colours.html">Colours</a>
+    <a class="site-header__link" href="projects.html" aria-current="page">Projects</a>
+    <a class="site-header__link" href="contact.html">Contact</a>
+    <a class="site-header__cta" href="contact.html">Get in Touch</a>
+  </nav>
+</header>
+
+<main id="main-content" class="projects-page">
+  <section class="page-hero projects-page-hero" aria-labelledby="projects-page-title">
+    <div class="page-hero__inner">
+      <p class="projects-page-hero__eyebrow">Fesolux project gallery</p>
+      <h1 class="page-hero__title" id="projects-page-title">Colour, care and character in every space.</h1>
+      <p class="projects-page-hero__copy">Take a look at a selection of painting work associated with Fesolux. From exterior finishes to interior spaces, each project gives a closer look at colour in use.</p>
+      <div class="breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page">Projects</span></div>
+    </div>
+  </section>
+
+  <section class="section projects-gallery" id="project-gallery" aria-labelledby="projects-gallery-title">
+    <div class="section__inner">
+      <div class="projects-gallery__heading">
+        <div>
+          <p class="section__eyebrow">Selected work</p>
+          <h2 class="section__title" id="projects-gallery-title">Projects worth a closer look</h2>
+        </div>
+        <p class="projects-gallery__intro">Browse by project type to explore the work on display.</p>
+      </div>
+
+      <div class="projects-filters" role="group" aria-label="Filter projects by category">
+        <button class="projects-filter is-active" type="button" data-project-filter="all" aria-pressed="true">All Projects</button>
+        <button class="projects-filter" type="button" data-project-filter="interior" aria-pressed="false">Interior</button>
+        <button class="projects-filter" type="button" data-project-filter="exterior" aria-pressed="false">Exterior</button>
+        <button class="projects-filter" type="button" data-project-filter="residential" aria-pressed="false">Residential</button>
+        <button class="projects-filter" type="button" data-project-filter="commercial" aria-pressed="false">Commercial</button>
+        <button class="projects-filter" type="button" data-project-filter="feature-walls" aria-pressed="false">Feature Walls</button>
+      </div>
+
+      <div class="projects-results-line">
+        <p id="projects-results-status" role="status" aria-live="polite">Showing 1 project</p>
+        <span>Real project photography</span>
+      </div>
+
+      <div class="projects-gallery__grid" id="projects-grid">
+        <article class="project-feature" data-project-card data-project-categories="exterior residential">
+          <button class="project-feature__image-button" type="button" data-project-open aria-haspopup="dialog" aria-label="View details for Contemporary Residential Exterior">
+            <img
+              class="project-feature__image"
+              src="../images/projects/residential-exterior-01.jpeg"
+              alt="Two-storey residential building with warm pale exterior walls, deep grey balcony and roofline trims, and white accents"
+              loading="lazy"
+              width="810"
+              height="1080">
+            <span class="project-feature__image-label">View project <span aria-hidden="true">↗</span></span>
+          </button>
+          <div class="project-feature__content">
+            <div class="project-feature__meta">
+              <span class="project-feature__index">Project 01</span>
+              <span class="project-feature__categories">Residential <i aria-hidden="true">·</i> Exterior</span>
+            </div>
+            <p class="project-feature__eyebrow">Exterior finish</p>
+            <h3>Contemporary Residential Exterior</h3>
+            <p class="project-feature__description">A two-storey home finished in a warm, light exterior palette. Deep grey balcony and roofline details create contrast, while white accents define the building's architectural lines.</p>
+            <div class="project-feature__finish">
+              <span>Visible finish</span>
+              **Warm pale walls · Deep grey trims · White accents**
+            </div>
+            <button class="project-feature__details-button" type="button" data-project-open>View project details <span aria-hidden="true">→</span></button>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-empty-state" id="projects-empty-state" hidden>
+        <p class="projects-empty-state__eyebrow">More projects to come</p>
+        <h3>No projects in this category yet</h3>
+        <p>There are no photographs in this category at the moment. Choose another category to keep exploring the gallery.</p>
+        <button class="projects-empty-state__reset" id="projects-reset" type="button">View all projects</button>
+      </div>
+
+      <p class="projects-gallery__note">Project photographs are added as they become available. Descriptions are limited to details visible in the submitted project images and information provided by Fesolux.</p>
+    </div>
+  </section>
+
+  <section class="section projects-contact">
+    <div class="section__inner projects-contact__inner">
+      <div>
+        <p class="section__eyebrow">Planning a project of your own?</p>
+        <h2 class="section__title">Let's talk about the finish you have in mind.</h2>
+        <p>Tell us about your space, the look you want to achieve and the paint solutions you are considering.</p>
+      </div>
+      <a class="button button--primary" href="contact.html">Discuss your project <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <dialog class="project-detail-dialog" id="project-detail-dialog" aria-labelledby="project-detail-title">
+    <div class="project-detail-dialog__top">
+      <p class="section__eyebrow">Project details</p>
+      <button class="project-detail-dialog__close" id="project-detail-close" type="button" aria-label="Close project details">×</button>
+    </div>
+    <img class="project-detail-dialog__image" src="../images/projects/residential-exterior-01.jpeg" alt="Full view of a two-storey residential exterior with pale walls and contrasting grey and white details">
+    <div class="project-detail-dialog__content">
+      <p class="project-detail-dialog__categories">Residential <span aria-hidden="true">·</span> Exterior</p>
+      <h2 id="project-detail-title">Contemporary Residential Exterior</h2>
+      <p>A two-storey residential exterior with warm pale walls, deep grey balcony and roofline trims, and white architectural accents.</p>
+      <dl class="project-detail-dialog__facts">
+        <div><dt>Project type</dt><dd>Residential exterior</dd></div>
+        <div><dt>Visible finish</dt><dd>Warm pale walls with deep grey and white details</dd></div>
+      </dl>
+      <a class="button button--primary" href="contact.html">Discuss a similar project <span aria-hidden="true">→</span></a>
+    </div>
+  </dialog>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <div>
+        <img class="site-footer__logo" src="../images/logo/logo.png" alt="Fesolux Paints logo">
+        <p class="site-footer__text">A closer look at selected painting work and colour finishes.</p>
+      </div>
+      <div><h2 class="site-footer__title">Quick Links</h2><div class="site-footer__links"><a class="site-footer__link" href="../index.html">Home</a><a class="site-footer__link" href="about.html">About Us</a><a class="site-footer__link" href="products.html">Products</a></div></div>
+      <div><h2 class="site-footer__title">Explore</h2><div class="site-footer__links"><a class="site-footer__link" href="colours.html">Colours</a><a class="site-footer__link" href="projects.html">Projects</a><a class="site-footer__link" href="contact.html">Contact</a></div></div>
+      <div><h2 class="site-footer__title">Projects</h2><p class="site-footer__text">Have a space in mind? Get in touch to discuss your painting plans.</p></div>
+    </div>
+    <div class="site-footer__bottom">&copy; <span id="current-year"></span> Fesolux Paints. All rights reserved.</div>
+  </div>
+</footer>
+<script src="../js/main.js" defer></script>
+</body>
+</html>
