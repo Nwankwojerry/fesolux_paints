@@ -142,3 +142,41 @@
   .colour-detail-dialog__actions { align-items: stretch; flex-direction: column; }
   .colour-detail-dialog__enquire, .colour-detail-dialog__copy { width: 100%; }
 }
+
+/* Projects portfolio responsive layout */
+@media (max-width: 1024px) {
+  .project-feature { grid-template-columns: minmax(0, 1fr) minmax(260px, .9fr); }
+  .project-feature__image-button, .project-feature__image { min-height: 420px; }
+  .project-feature__meta { margin-bottom: 1.8rem; }
+}
+
+@media (max-width: 768px) {
+  .projects-page-hero { padding: 8rem 1rem 3rem; }
+  .projects-page-hero .page-hero__title { font-size: clamp(2.35rem, 9vw, 3.6rem); }
+  .projects-gallery { padding-block: 3.5rem 4rem; }
+  .projects-gallery__heading { align-items: flex-start; flex-direction: column; gap: .6rem; margin-bottom: 1.2rem; }
+  .projects-gallery__intro { font-size: .88rem; }
+  .projects-filters { flex-wrap: nowrap; max-width: 100%; overflow-x: auto; padding-bottom: .8rem; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+  .projects-filter { flex: 0 0 auto; min-height: 38px; padding-inline: .8rem; font-size: .76rem; }
+  .projects-results-line { padding-block: .8rem; }
+  .project-feature { grid-template-columns: minmax(0,1fr); }
+  .project-feature__image-button { min-height: 0; aspect-ratio: 3 / 4; }
+  .project-feature__image { min-height: 0; height: 100%; object-fit: contain; }
+  .project-feature__content { padding: 1.2rem; }
+  .project-feature__meta { margin-bottom: 1.5rem; }
+  .project-feature__content h3 { font-size: 1.65rem; }
+  .project-feature__description { font-size: .86rem; }
+  .projects-contact { padding-block: 3rem; }
+  .projects-contact__inner { align-items: flex-start; flex-direction: column; gap: 1.2rem; }
+  .project-detail-dialog { width: min(96vw, 720px); padding: .7rem; }
+  .project-detail-dialog__image { max-height: 55vh; }
+  .project-detail-dialog__facts { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 380px) {
+  .projects-gallery { padding-inline: .7rem; }
+  .projects-filter { padding-inline: .7rem; font-size: .72rem; }
+  .project-feature__content { padding: 1rem; }
+  .project-feature__meta { align-items: flex-start; flex-direction: column; }
+  .project-feature__content h3 { font-size: 1.5rem; }
+}
