@@ -222,12 +222,23 @@ function initializeColourCatalogue() {
   const detailCode = page.querySelector("#colour-detail-code");
   const detailDescription = page.querySelector("#colour-detail-description");
   const detailClose = page.querySelector("#colour-detail-close");
+  const enquireLink = page.querySelector("#colour-detail-enquire");
   const copyButton = page.querySelector("#colour-detail-copy");
   const copyStatus = page.querySelector("#colour-detail-copy-status");
 
   if (!searchInput || !filterButtons.length || !cards.length || !detailDialog) return;
 
-  const familyNames = { blue: "Blues", yellow: "Yellows", white: "Whites" };
+  const familyNames = {
+    neutral: "Whites & creams",
+    grey: "Greys",
+    blue: "Blues",
+    green: "Greens",
+    yellow: "Yellows",
+    red: "Reds",
+    brown: "Browns",
+    other: "Other shades"
+  };
+
   let activeFamily = "all";
   let selectedShade = null;
 
@@ -240,7 +251,8 @@ function initializeColourCatalogue() {
       const searchableText = [
         card.dataset.colourName,
         card.dataset.colourCode,
-        card.dataset.colourFamily
+        card.dataset.colourValue,
+        familyNames[card.dataset.colourFamily]
       ].filter(Boolean).join(" ").toLocaleLowerCase();
       const searchMatches = !query || searchableText.includes(query);
       const visible = familyMatches && searchMatches;
@@ -287,9 +299,10 @@ function initializeColourCatalogue() {
     searchInput.focus();
   });
 
-  page.querySelectorAll("[data-inspiration-filter]").forEach((button) => {
-    button.addEventListener("click", () => {
-      activeFamily = button.dataset.inspirationFilter || "all";
+  page.querySelectorAll("[data-inspiration-filter]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      activeFamily = link.dataset.inspirationFilter || "all";
       searchInput.value = "";
       applyColourFilters();
       page.querySelector("#colour-catalogue")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -301,22 +314,25 @@ function initializeColourCatalogue() {
     selectedShade = {
       name: card.dataset.colourName || "Colour sample",
       family: familyNames[card.dataset.colourFamily] || "Colour",
-      code: card.dataset.colourCode || "",
-      value: card.dataset.colourValue || "#ffffff",
+      reference: card.dataset.colourCode || "",
+      value: (card.dataset.colourValue || "#ffffff").toUpperCase(),
       description: card.querySelector(".colour-card__description")?.textContent.trim() || ""
     };
 
     detailSwatch.style.backgroundColor = selectedShade.value;
     detailName.textContent = selectedShade.name;
     detailFamily.textContent = selectedShade.family;
+    detailCode.textContent = `Sample reference: ${selectedShade.reference} · HEX preview: ${selectedShade.value}`;
     detailDescription.textContent = selectedShade.description;
 
-    if (selectedShade.code) {
-      detailCode.textContent = `Shade code: ${selectedShade.code}`;
-      detailCode.hidden = false;
-    } else {
-      detailCode.textContent = "";
-      detailCode.hidden = true;
+    if (enquireLink) {
+      const params = new URLSearchParams({
+        colour: selectedShade.name,
+        ref: selectedShade.reference,
+        hex: selectedShade.value,
+        family: selectedShade.family
+      });
+      enquireLink.href = `contact.html?${params.toString()}`;
     }
 
     if (copyStatus) copyStatus.textContent = "";
@@ -343,22 +359,67 @@ function initializeColourCatalogue() {
   copyButton?.addEventListener("click", async () => {
     if (!selectedShade || !copyStatus) return;
 
-    const lines = [`Colour: ${selectedShade.name}`, `Family: ${selectedShade.family}`];
-    if (selectedShade.code) lines.push(`Shade code: ${selectedShade.code}`);
+    const lines = [
+      `Colour: ${selectedShade.name}`,
+      `Family: ${selectedShade.family}`,
+      `Sample reference: ${selectedShade.reference}`,
+      `HEX preview: ${selectedShade.value}`
+    ];
 
     try {
       if (!navigator.clipboard?.writeText) throw new Error("Clipboard access is unavailable");
       await navigator.clipboard.writeText(lines.join("\n"));
       copyStatus.textContent = "Shade details copied.";
     } catch {
-      copyStatus.textContent = "Copy is unavailable here. Please note the shade name and family.";
+      copyStatus.textContent = "Copy is unavailable here. Please note the shade details.";
     }
   });
-
+  
   applyColourFilters();
 }
 
+function initializeColourInspirationPhotos() {
+  document.querySelectorAll("[data-photo-slot] .colour-inspiration-photo__image").forEach((image) => {
+    const media = image.closest("[data-photo-slot]");
+    const showPhoto = () => media?.classList.add("has-photo");
+    image.addEventListener("load", showPhoto, { once: true });
+    image.addEventListener("error", () => {
+      image.hidden = true;
+      media?.classList.remove("has-photo");
+    }, { once: true });
+    if (image.complete && image.naturalWidth > 0) showPhoto();
+  });
+}
+
+function initializeColourContactPrefill() {
+  const messageField = document.querySelector("#message");
+  if (!messageField) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const colour = params.get("colour");
+  if (!colour) return;
+
+  const reference = params.get("ref") || "";
+  const hex = params.get("hex") || "";
+  const family = params.get("family") || "";
+  const messageLines = [
+    "Hello Fesolux, I would like to enquire about this colour:",
+    `Colour: ${colour}`,
+    family ? `Colour family: ${family}` : "",
+    reference ? `Sample reference: ${reference}` : "",
+    hex ? `HEX preview: ${hex}` : "",
+    "",
+    "Please confirm its availability and whether a sample can be requested."
+  ].filter((line, index, list) => line !== "" || (index > 0 && list[index - 1] !== ""));
+  messageField.value = messageLines.join("\n");
+
+  const context = document.querySelector("#colour-enquiry-context");
+  if (context) context.hidden = false;
+}
+
 initializeColourCatalogue();
+initializeColourInspirationPhotos();
+initializeColourContactPrefill();
 
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) {
