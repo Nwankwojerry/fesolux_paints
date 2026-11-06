@@ -155,3 +155,14 @@
   .services-option { min-height: 0; padding: 1.2rem; }
   .services-page-note__inner { align-items: flex-start; flex-direction: column; }
 }
+
+/* Keep the expanded navigation comfortable on smaller laptop widths. */
+@media (min-width: 769px) and (max-width: 960px) {
+  .site-header { gap: .7rem; padding-inline: .7rem; }
+  .site-header__logo { max-width: 108px; max-height: 48px; }
+  .site-header__navigation { gap: 0; }
+  .site-header__link { padding-inline: .42rem; font-size: .76rem; }
+  .site-header__link::after { left: .42rem; right: .42rem; }
+  .site-header__dropdown-toggle { gap: .25rem; }
+  .site-header__cta { min-height: 39px; padding-inline: .7rem; font-size: .76rem; }
+}
