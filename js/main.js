@@ -421,6 +421,77 @@ initializeColourCatalogue();
 initializeColourInspirationPhotos();
 initializeColourContactPrefill();
 
+
+function initializeProjectsGallery() {
+  const page = document.querySelector(".projects-page");
+  if (!page) return;
+
+  const filters = Array.from(page.querySelectorAll("[data-project-filter]"));
+  const cards = Array.from(page.querySelectorAll("[data-project-card]"));
+  const resultsStatus = page.querySelector("#projects-results-status");
+  const emptyState = page.querySelector("#projects-empty-state");
+  const resetButton = page.querySelector("#projects-reset");
+  const dialog = page.querySelector("#project-detail-dialog");
+  const closeButton = page.querySelector("#project-detail-close");
+
+  if (!filters.length || !cards.length || !dialog) return;
+
+  function applyFilter(category) {
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const categories = (card.dataset.projectCategories || "").split(/\s+/).filter(Boolean);
+      const visible = category === "all" || categories.includes(category);
+      card.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+
+    filters.forEach((button) => {
+      const active = button.dataset.projectFilter === category;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+
+    if (resultsStatus) {
+      resultsStatus.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "project" : "projects"}`;
+    }
+    if (emptyState) emptyState.hidden = visibleCount > 0;
+  }
+
+  filters.forEach((button) => {
+    button.addEventListener("click", () => {
+      applyFilter(button.dataset.projectFilter || "all");
+    });
+  });
+
+  resetButton?.addEventListener("click", () => {
+    applyFilter("all");
+  });
+
+  function openProjectDetails() {
+    if (typeof dialog.showModal === "function") dialog.showModal();
+    else dialog.setAttribute("open", "");
+  }
+
+  page.querySelectorAll("[data-project-open]").forEach((button) => {
+    button.addEventListener("click", openProjectDetails);
+  });
+
+  function closeProjectDetails() {
+    if (typeof dialog.close === "function" && dialog.open) dialog.close();
+    else dialog.removeAttribute("open");
+  }
+
+  closeButton?.addEventListener("click", closeProjectDetails);
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) closeProjectDetails();
+  });
+
+  applyFilter("all");
+}
+
+initializeProjectsGallery();
+
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) {
     initializeNavigation();
